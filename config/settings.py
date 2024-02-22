@@ -47,9 +47,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # 'django.middleware.cache.UpdateCacheMiddleware',  # кэширование всего сайта
     'django.middleware.security.SecurityMiddleware',
-    # 'django.middleware.cache.FetchFromCacheMiddleware',  # кэширование всего сайта
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -145,13 +143,3 @@ EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 EMAIL_ADMIN = EMAIL_HOST_USER
-
-CACHE_ENABLED = os.getenv('CACHE_ENABLED') == 'True'
-
-if CACHE_ENABLED:
-    CACHES = {
-        "default": {
-            "BACKEND": "django.core.cache.backends.redis.RedisCache",
-            "LOCATION": os.getenv('CACHE_LOCATION'),
-        }
-    }

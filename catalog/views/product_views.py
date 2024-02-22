@@ -6,7 +6,6 @@ from django.views import generic
 from catalog.models import Product, Version
 
 from catalog.forms import ProductForm, VersionForm
-from catalog.services import get_category_cached
 
 PRODUCTS_PER_PAGE = 6
 
@@ -26,7 +25,6 @@ class ProductDetailView(mixins.LoginRequiredMixin, generic.DetailView):
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
         context_data['title'] = 'Просмотр продукта'
-        context_data['category'] = get_category_cached(self.object.pk)
         return context_data
 
 

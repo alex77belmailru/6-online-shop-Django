@@ -30,7 +30,7 @@
 - User (авторизованные пользователи)
 
 
-Запус приложения
+Запуск приложения
 1. Создать бд catalog, например, в pgadmin
 2. python manage.py makemigrations
 3. python manage.py makemigrations users

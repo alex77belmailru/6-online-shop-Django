@@ -1,0 +1,15 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <form method="POST" , enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <h4><p class="text text-danger"> {{ object }}</h4>
+            <input type="submit" class="btn btn-danger" value="Подтверждаю удаление">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

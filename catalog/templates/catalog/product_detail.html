@@ -1,0 +1,27 @@
+{% extends 'catalog/base.html' %}
+{% load custom_tags %}
+{% block content %}
+    <div class="album py-5 bg-light bg-transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-body">
+                            <p class="card-text">Наименование: {{ object.name }}</p>
+                            <p class="card-text">Описание: {{ object.description }}</p>
+                            <p class="card-text">Цена: {{ object.price }} руб.</p>
+                            <p class="card-text">Дата создания: {{ object.date_create }}</p>
+                            <p class="card-text">Дата изменения: {{ object.date_modify }}</p>
+                            <p class="card-text">Категория: {{ category }}</p>
+                            {% if object.user %}<p class="card-text">Создал: {{ object.user }}</p>{% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img class="card-img-top" src='{{ object.image.url }}' alt="Card image cap">
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

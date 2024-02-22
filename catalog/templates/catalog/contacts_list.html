@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+    <body>
+        <div class="album py-4 bg-dark">
+            <div class="container">
+                <div class="row">
+                    {% for contact in object_list %}
+                        <div class="col-md-6">
+                            <div class="card mb-4 box-shadow text-info">
+                                <div class="card-body">
+                                    <p class="card-text">Имя: {{ contact.name }}</p>
+                                    <p class="card-text">Телефон: {{ contact.phone }}</p>
+                                    <p class="card-text">Почта: {{ contact.email }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}

@@ -8,7 +8,6 @@ from catalog.models import Post
 from catalog.services import sendmail
 
 
-
 class BlogPostCreateView(mixins.PermissionRequiredMixin, generic.CreateView):
     permission_required = 'catalog.add_post'
     model = Post
@@ -51,7 +50,7 @@ class BlogPostDetailView(generic.DetailView):
         if post.views == 100:
             sendmail(
                 f'Поздравляю, статья "{post.title}" набрала {post.views} просмотров',
-                ('alex77bel@yandex.ru', )
+                ('alex77bel@yandex.ru',)
             )
         post.save()
         return post

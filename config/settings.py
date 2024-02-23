@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'catalog.templatetags.custom_tags',
     'catalog.apps.CatalogConfig',
     'users.apps.UsersConfig',
 ]

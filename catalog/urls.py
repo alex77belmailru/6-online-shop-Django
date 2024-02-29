@@ -13,8 +13,6 @@ urlpatterns = [
     path('', product_views.ProductsListView.as_view(), name='home'),
 
     path('product/<int:pk>/', product_views.ProductDetailView.as_view(), name='product'),
-    # кэширование контроллера
-    # path('product/<int:pk>/', cache_page(60)(product_views.ProductDetailView.as_view()), name='product'),
 
     path('create_product/', product_views.ProductCreateView.as_view(), name='create_product'),
     path('update_product/<int:pk>', product_views.ProductUpdateView.as_view(), name='update_product'),
